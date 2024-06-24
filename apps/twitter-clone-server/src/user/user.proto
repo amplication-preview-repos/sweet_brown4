@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+                 package user;
+service UserService {
+ rpc createUser (UserCreateInput) returns (User) {}
+rpc users (findManyParams) returns (stream User) {}
+rpc user (UserWhereUniqueInput) returns (User) {}
+rpc updateUser (UserUpdateInput) returns (User) {}
+rpc deleteUser (UserWhereUniqueInput) returns (User) {}
+rpc findManyUser (UserWhereUniqueInput) returns (stream Like) {}
+rpc updateUser (LikeParams) returns (stream Like) {}
+rpc connectUser (LikeParams) returns (Like) {}
+rpc disconnectUser (LikeParams) returns (Like) {} 
+ }
+message UserCreateInput {
+string bio = 1;
+string createdAt = 2;
+string displayName = 3;
+string email = 4;
+string firstName = 5;
+string id = 6;
+string lastName = 7;
+repeated Like likes = 8;
+string password = 9;
+repeated string roles = 10;
+string updatedAt = 11;
+string username = 12;
+};
+message User {
+string bio = 1;
+string createdAt = 2;
+string displayName = 3;
+string email = 4;
+string firstName = 5;
+string id = 6;
+string lastName = 7;
+repeated Like likes = 8;
+string password = 9;
+repeated string roles = 10;
+string updatedAt = 11;
+string username = 12;
+};
+message UserWhereUniqueInput {
+string bio = 1;
+string createdAt = 2;
+string displayName = 3;
+string email = 4;
+string firstName = 5;
+string id = 6;
+string lastName = 7;
+repeated Like likes = 8;
+string password = 9;
+repeated string roles = 10;
+string updatedAt = 11;
+string username = 12;
+};
+message UserUpdateInput {
+string bio = 1;
+string createdAt = 2;
+string displayName = 3;
+string email = 4;
+string firstName = 5;
+string id = 6;
+string lastName = 7;
+repeated Like likes = 8;
+string password = 9;
+repeated string roles = 10;
+string updatedAt = 11;
+string username = 12;
+};
+message findManyParams {
+
+};
+message Like {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message LikeWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message LikeParams {
+UserWhereUniqueInput userWhereUniqueInput = 1;
+LikeWhereUniqueInput likeWhereUniqueInput = 2;
+};

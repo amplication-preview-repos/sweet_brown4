@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+                 package follower;
+service FollowerService {
+ rpc createFollower (FollowerCreateInput) returns (Follower) {}
+rpc followers (findManyParams) returns (stream Follower) {}
+rpc follower (FollowerWhereUniqueInput) returns (Follower) {}
+rpc updateFollower (FollowerUpdateInput) returns (Follower) {}
+rpc deleteFollower (FollowerWhereUniqueInput) returns (Follower) {} 
+ }
+message FollowerCreateInput {
+string createdAt = 1;
+repeated Follower followers = 2;
+string following = 3;
+string id = 4;
+string updatedAt = 5;
+};
+message Follower {
+string createdAt = 1;
+repeated Follower followers = 2;
+string following = 3;
+string id = 4;
+string updatedAt = 5;
+};
+message FollowerWhereUniqueInput {
+string createdAt = 1;
+repeated Follower followers = 2;
+string following = 3;
+string id = 4;
+string updatedAt = 5;
+};
+message FollowerUpdateInput {
+string createdAt = 1;
+repeated Follower followers = 2;
+string following = 3;
+string id = 4;
+string updatedAt = 5;
+};
+message findManyParams {
+
+};

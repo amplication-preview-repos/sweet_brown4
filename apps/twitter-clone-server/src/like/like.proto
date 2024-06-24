@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package like;
+service LikeService {
+ rpc createLike (LikeCreateInput) returns (Like) {}
+rpc likes (findManyParams) returns (stream Like) {}
+rpc like (LikeWhereUniqueInput) returns (Like) {}
+rpc updateLike (LikeUpdateInput) returns (Like) {}
+rpc deleteLike (LikeWhereUniqueInput) returns (Like) {} 
+ }
+message LikeCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message Like {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message LikeWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message LikeUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
